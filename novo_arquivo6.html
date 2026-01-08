@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Linha do Tempo | Amor & Destino</title>
+    <style>
+        :root {
+            --cor-fundo: #fff5f7;
+            --cor-primaria: #ff4d6d;
+            --cor-secundaria: #c9184a;
+            --cor-texto: #590d22;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://www.transparenttextures.com/patterns/cubes.png');
+        }
+
+        h1 { font-size: 3rem; color: var(--cor-secundaria); margin-bottom: 10px; }
+
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .story-box { border-left: 5px solid var(--cor-primaria); padding-left: 20px; }
+
+        /* Estilo das Fotos */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 3px solid var(--cor-primaria);
+        }
+
+        .quote-box {
+            background: var(--cor-primaria);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.4rem;
+            border-radius: 50px 0 50px 0;
+            margin: 40px 0;
+        }
+
+        .interactive-btn {
+            background: var(--cor-secundaria);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            transition: 0.3s;
+        }
+
+        .interactive-btn:hover { background: #ff758f; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 40px; opacity: 0.7; }
+
+        .hidden-message { display: none; margin-top: 20px; font-weight: bold; color: var(--cor-secundaria); text-align: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Nossa História ❤️</h1>
+        <p>De um ônibus qualquer para o resto da vida.</p>
+    </header>
+
+    <div class="container">
+        
+        <section class="section">
+            <h2> Onde tudo começou...</h2>
+            <div class="story-box">
+                <p>Quem diria que o destino estava disfarçado de motorista de ônibus? Num dia comum, em um trajeto qualquer, nossos caminhos se cruzaram por ordem de forças maiores.</p>
+                <p>Desde aquele dia, quando eu olhei no fundo desses olhos lindos, eu não parei de pensar em você, e depois de alguns dias eu resolvi aparecer pra ver no que ia dar.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📸 Nossos Momentos</h2>
+            <div class="photo-grid">
+                <img src="https://lh3.googleusercontent.com/d/1SAs4Wz_lYf-2_yBqXGzYvTzP_9yP_9yP" alt="Nossa Foto 1">
+                <img src="https://lh3.googleusercontent.com/d/1SAs4Wz_lYf-2_yBqXGzYvTzP_9yP_9yP" alt="Nossa Foto 2">
+            </div>
+            <p style="text-align: center; font-size: 0.8rem; color: #999; margin-top: 10px;">(Você pode adicionar mais links de fotos no código depois!)</p>
+        </section>
+
+        <div class="quote-box">
+            "Nois pode até brigar, meter o louco e se desentender, mas no fim, você sempre será meu lugar seguro. Que a gente se resolva mil vezes, mas que fiquemos juntos para sempre."
+        </div>
+
+        <section class="section">
+          <h2>Nossos jeitos de se amar 👀</h2>
+            <p>A gente tem nosso próprio jeito de se amar, tem horas que é com amor e carinho, mas também tem horas que nos amamos de outra forma...</p>
+            <p style="text-align: center; font-size: 1.2rem;">🔥😏</p>
+        </section>
+
+        <section class="section">
+            <h2>✨ Um recado pra você...</h2>
+            <p style="text-align: center;">Clique no botão abaixo para saber o que eu sinto agora:</p>
+            <button class="interactive-btn" onclick="revelarMensagem()">Clique aqui, meu amor!</button>
+            <p id="mensagem" class="hidden-message">Você é a melhor parte do meu dia. Te amo muitoooo ❤️</p>
+        </section>
+
+    </div>
+
+    <footer>
+        Feito com ❤️ por quem te ama demais.
+    </footer>
+
+    <script>
+        function revelarMensagem() {
+            const msg = document.getElementById('mensagem');
+            msg.style.display = 'block';
+            
+            setTimeout(() => {
+                alert("Você chegou e mudou meu mundo, sou muito grato por você na minha, me desculpa por certas idiotices, estou melhorando. Isso é o mínimo que posso fazer, você merece o mundo minha garotinha! 💖✨");
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
