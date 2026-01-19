@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Minha Garotinha 💌</title>
+    <style>
+        :root {
+            --cor-fundo: #ff4d6d;
+            --cor-papel: #ffffff;
+            --cor-texto: #590d22;
+        }
+
+        body { 
+            background-color: var(--cor-fundo); 
+            background-image: radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--cor-texto); 
+            font-family: 'Georgia', serif; /* Fonte estilo carta */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 20px;
+        }
+
+        .carta { 
+            background: var(--cor-papel);
+            padding: 50px; 
+            max-width: 600px; 
+            border-radius: 2px; /* Bordas retas como papel */
+            box-shadow: 20px 20px 0px rgba(0,0,0,0.1);
+            position: relative;
+            transform: rotate(-1deg);
+            animation: surgir 1.2s ease-out;
+        }
+
+        /* Linhas do papel */
+        .carta::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 40px;
+            width: 2px; height: 100%;
+            background: rgba(255, 77, 109, 0.2);
+        }
+
+        @keyframes surgir {
+            from { opacity: 0; transform: translateY(30px) rotate(0deg); }
+            to { opacity: 1; transform: translateY(0) rotate(-1deg); }
+        }
+
+        h1 { 
+            font-size: 2.2rem; 
+            color: #c9184a; 
+            margin-top: 0;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+        }
+
+        p { 
+            font-size: 1.25rem; 
+            line-height: 1.8; 
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .assinatura {
+            text-align: right;
+            font-style: italic;
+            font-size: 1.4rem;
+            margin-top: 40px;
+            color: #ff4d6d;
+        }
+
+        .voltar-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .voltar { 
+            color: #ff4d6d; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .voltar:hover { opacity: 0.7; }
+
+        /* Coração flutuante no topo */
+        .heart-icon {
+            font-size: 3rem;
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carta">
+        <span class="heart-icon">❤️</span>
+        <h1>Minha Carta para Você</h1>
+        
+        <p>
+            Escrevi isso para dizer que você é a pessoa mais incrível que cruzou meu caminho naquele exato momento de uma puta conhecidencia. Jamais imaginei que você em um trablho de escola, num dia comum se encontraria  comigo pelas mãos do destino e mudaria minha vida dessa forma.
+        </p>
+        
+        <p>
+            Cada erro meu me ensina a ser um homem melhor para você. Sei que não sou perfeito, mas o meu amor por você é real e puro. Obrigado por ser meu lugar seguro e por me dar a chance de mostrar que estou melhorando por nós.
+        </p>
+
+        <p>Você merece o mundo, minha garotinha. Te amo daqui até o impensável.</p>
+        
+        <div class="assinatura">Com todo o meu amor. ❤️</div>
+
+        <div class="voltar-container">
+            <a href="index.html" class="voltar">← Voltar para o início</a>
+        </div>
+    </div>
+
+</body>
+</html>
