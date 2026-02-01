@@ -159,16 +159,51 @@
             animation: fadeIn 0.5s ease;
         }
 
+        /* Estilo do Botão de Música Flutuante */
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: white;
+            border: 2px solid var(--cor-primaria);
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            font-family: inherit;
+            color: var(--cor-secundaria);
+            font-weight: bold;
+        }
+        .music-control:hover {
+            transform: scale(1.05);
+            background: #fff0f3;
+        }
+
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         @media (max-width: 600px) {
             h1 { font-size: 2.2rem; }
             .photo-grid { gap: 15px; }
             .section { padding: 25px; }
+            .music-control { padding: 8px 15px; font-size: 0.8rem; }
         }
     </style>
 </head>
 <body>
+
+    <audio id="bgMusic" loop>
+        <source src="hungria.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <button class="music-control" onclick="toggleMusic()">
+        <span id="musicIcon">🎵</span> <span id="musicText">Play Música</span>
+    </button>
 
     <header>
         <h1>Nossa História ❤️</h1>
@@ -223,6 +258,41 @@
                 window.location.href = "pagina2.html"; 
             }, 500);
         }
+
+        // Script para controlar a música
+        const audio = document.getElementById('bgMusic');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicText = document.getElementById('musicText');
+
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play();
+                musicIcon.textContent = "⏸️";
+                musicText.textContent = "Pausar";
+            } else {
+                audio.pause();
+                musicIcon.textContent = "🎵";
+                musicText.textContent = "Play Música";
+            }
+        }
+
+        // Tenta iniciar a música com volume baixo (às vezes funciona o autoplay assim)
+        audio.volume = 0.5;
+        
+        // Tenta dar play automaticamente ao carregar
+        window.addEventListener('load', () => {
+            const promessa = audio.play();
+            if (promessa !== undefined) {
+                promessa.then(_ => {
+                    // Autoplay funcionou
+                    musicIcon.textContent = "⏸️";
+                    musicText.textContent = "Pausar";
+                }).catch(error => {
+                    // Autoplay foi bloqueado pelo navegador, usuário precisa clicar no botão
+                    console.log("Autoplay bloqueado. Aguardando interação.");
+                });
+            }
+        });
     </script>
 
 </body>
